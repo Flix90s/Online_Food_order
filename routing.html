@@ -1,0 +1,33 @@
+<div id="menu">
+    <a href="./">Home</a>
+    <a href="./about">About</a>
+    <a href="./contacts">Contacts</a>
+</div>
+<div id="mainView"></div>
+
+<template id="homeTemplate">
+    <h1>Home</h1>
+    <p>Welcome to our website!</p>
+</template>
+<template id="aboutTemplate">
+    <h1>About</h1>
+    <p>This is a sample page.</p>
+</template>
+<template id="contactsTemplate">
+    <h1>Contacts</h1>
+    <p>Write us an email!</p>
+</template>
+
+<script>
+    window.onload = function () {
+    const router = new Smart.Router('mainView', './');
+
+    router.setRoutes([
+        { path: '/', template: 'homeTemplate', title: 'Home' },
+        { path: '/about', template: 'aboutTemplate', title: 'About' },
+        { path: '/contacts', template: 'contactsTemplate', title: 'Contacts' }
+    ]);
+
+    router.route('/');
+};
+</script>
